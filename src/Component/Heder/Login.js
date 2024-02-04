@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput,  } from 'mdb-react-ui-kit';
-import { DataProduct } from '../../App';
+// import { DataProduct } from '../../App';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   // User Data to signup 
-  const { userData,setLogin,setnewUser } = useContext(DataProduct);
+
  
   
   
@@ -65,7 +65,7 @@ const Login = () => {
       <MDBRow className="justify-content-center">
         <MDBCol md="4">
           <MDBCard>
-           <img src='https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg'/>
+           <img src='https://img.freepik.com/free-vector/cloud-computing-security-abstract-concept-illustration_335657-2105.jpg' alt='lapd'/>
             <MDBCardBody>
               <MDBInput
                 wrapperClass='mb-4'

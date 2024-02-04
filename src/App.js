@@ -12,6 +12,11 @@
   import Signup from './Component/Heder/Signup';
   import NewCom from './Component/Heder/ProdcutList/NewCom';
   import NewCom2 from './Component/Heder/ProdcutList/NewCom2';
+  import View from './ProductSection/View';
+ 
+
+
+
 
 
 
@@ -26,11 +31,12 @@
     const [userData,setUserData] = useState([])
     const [login,setLogin]=useState(false)
     const[newUser,setnewUser]=useState([])
+    const [cart,setCart]=useState([])
 
     return (
       <div>
    
-      <DataProduct.Provider value={{ product, setProduct , userData, setUserData,login,setLogin,newUser,setnewUser}}>
+      <DataProduct.Provider value={{ product, setProduct , userData, setUserData,login,setLogin,newUser,setnewUser,cart,setCart}}>
        <Head2/>
         <Routes>
           <Route path='/' element={<Bennar/>} />
@@ -38,6 +44,7 @@
           <Route path='/laptop' element={<Laptop/>}/>
           <Route path='/Login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
+          <Route path='/View/:id' element={<View/>}/>
         </Routes>
         {
         ijdsk&&

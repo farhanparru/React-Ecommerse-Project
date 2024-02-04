@@ -1,15 +1,16 @@
 import React from 'react';
 import { DataProduct } from './ProductData';
+import { useNavigate } from 'react-router-dom';
 
 const Laptop = () => {
+  const navigate = useNavigate()
   // Filter products based on category 'laptops'
   const laptopProducts = DataProduct.filter((item) => item.category === 'Laptops');
-  console.log(laptopProducts);
 
   return (
     <div className='w-full h-auto flex gap-10 flex-wrap p-14'>
       {laptopProducts.map((item) => (
-        <div key={item.id} className="card w-96 bg-base-100 shadow-xl">
+        <div key={item.id} className="card w-96 bg-base-100 shadow-xl hover:shadow-2xl transform transition duration-300 ease-in-out hover:scale-105">
           <figure>
             <img src={item.Image} alt="Note" />
           </figure>
@@ -19,7 +20,11 @@ const Laptop = () => {
             <p className='font-bold text-green-500'>${item.Price}</p>
 
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+
+            
+              <button className="btn btn-primary"
+              onClick={()=>navigate(`/View/${item.id}`)}
+              >Buy Now</button>
             </div>
           </div>
         </div>

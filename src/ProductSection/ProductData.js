@@ -170,6 +170,37 @@ export const DataProduct =[
     category:"Laptops",
     Qty:1,
     Stock:10,
+    },
+    {
+    id:17,
+    ProductName:"CHUWI intel Core i5",
+    OldPrice:"39990",
+    Price:70000,
+    Image:"https://cdn.moglix.com/p/NLuGEIsVL0LNm-xxlarge.png ",
+    category:"Laptops",
+    Qty:1,
+    Stock:10
+
+    },
+    {
+    id:18,
+    ProductName:"Lenovo legion 15IMH6",
+    OldPrice:'57626',
+    Price:80000,
+    Image:"https://cdn.moglix.com/p/0PUKXXsPy7N3K-xxlarge.jpg",
+    category:"Laptops",
+    Qty:1,
+    Stock:10
+    },
+    {
+    id:19,
+    ProductName:"I KAll k570 4Gb",
+    OldPrice:"6651",
+    Price:50000,
+    Image:"https://cdn.moglix.com/p/5cDe9AD1J0BPL-xxlarge.jpg",
+    category:"SmartPhone",
+    Qty:1,
+    Stock:10
     }
     
 ]
