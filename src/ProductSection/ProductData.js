@@ -113,6 +113,11 @@ export const DataProduct =[
     {
     id:11,
     ProductName:"Auus Intel Core 15th",
+    ProcessorName:"Intel ® Core ™ i7 processor",
+    SSDCapacity:"(8GB/512GB SSD",
+    OperatingSystem:"Windows 11 ",
+    ScreenSize:"39.62 Cms) Fhd,",
+    BatteryBackup:"300 cycles (or about one year)",
     OldPrice:"67990",
     Price:70000,
     Image:"https://www.myg.in/images/thumbnails/624/460/detailed/47/81UWgnVKDBL._SX679_.JPG",

@@ -13,6 +13,8 @@
   import NewCom from './Component/Heder/ProdcutList/NewCom';
   import NewCom2 from './Component/Heder/ProdcutList/NewCom2';
   import View from './ProductSection/View';
+  import { DataProduct } from './ProductSection/ProductData';
+import Scree from './ProductSection/Scree';
  
 
 
@@ -20,23 +22,24 @@
 
 
 
-  export const DataProduct = createContext();
+  export const DataProductt = createContext();
 
 
 
   function App() {
     const loc=useLocation()
     const  ijdsk=loc.pathname.endsWith("/")
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState(DataProduct);
     const [userData,setUserData] = useState([])
     const [login,setLogin]=useState(false)
     const[newUser,setnewUser]=useState([])
     const [cart,setCart]=useState([])
+    console.log(product);
 
     return (
       <div>
    
-      <DataProduct.Provider value={{ product, setProduct , userData, setUserData,login,setLogin,newUser,setnewUser,cart,setCart}}>
+      <DataProductt.Provider value={{ product, setProduct , userData, setUserData,login,setLogin,newUser,setnewUser,cart,setCart}}>
        <Head2/>
         <Routes>
           <Route path='/' element={<Bennar/>} />
@@ -52,11 +55,12 @@
         <Brand/>
         <NewCom/>
         <NewCom2/>
+        <Scree/>
         </>
         
         }
         <Footer/>
-        </DataProduct.Provider>
+        </DataProductt.Provider>
        <ToastContainer/>
       
       </div>

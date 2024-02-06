@@ -46,7 +46,7 @@ function Head2() {
   product.ProductName.toLowerCase().includes(searchTerm.toLowerCase())
 );
 
-console.log(filteredProducts)
+// console.log(filteredProducts)
   return (
     <Navbar expand="lg" className='bg-cyan-800 px-4 text-white  font-thin'>
     <Container   >

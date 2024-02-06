@@ -4,7 +4,7 @@ const NewCom2 = () => {
   return (
     <div style={style.parent}>
       <img
-        src='https://www.apple.com/v/iphone-15-pro/c/images/overview/camera/48mp_camera__cxq25ak34nau_large.jpg'
+        src='https://img.freepik.com/free-photo/still-life-books-versus-technology_23-2150062920.jpg'
         alt='iPhone 15'
       />
 

@@ -1,25 +1,25 @@
 import React, { useContext } from 'react'
-import { DataProduct } from '../App'
+import { DataProductt } from '../App'
 import { useParams } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom';
 
 
 
 const View = () => {
-    const {product,cart,setCart}= useContext(DataProduct)
-
-
- 
+     const { product, cart, setCart } = useContext(DataProductt);
+    console.log(product,"hah");
+    const navigate = useNavigate();
     
   const {id} = useParams()
 
  const findView = product.find((item)=> item.id === parseInt(id))
+//  console.log('Found Product:', findView);
 
+// console.log(findView);
 
-console.log(findView);
- 
   return (
     <div>
+    <h1>hai</h1>
       
       <div class="relative z-10" role="dialog" aria-modal="true">
  
@@ -32,24 +32,24 @@ console.log(findView);
         <div class="relative flex w-full items-center overflow-hidden bg-white px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
           <button type="button" class="absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8">
             <span class="sr-only">Close</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" onClick={() => navigate('/laptop')}>
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
 
           <div class="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:gap-x-8">
             <div class="aspect-h-3 aspect-w-2 overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5">
-
+                 
               <img   variant='top' src={findView.Image} alt="Two each of gray, white, and black shirts arranged on table." class="object-cover object-center"/>
                 
             </div>
             <div class="sm:col-span-8 lg:col-span-7">
-              <h2 class="text-2xl font-bold text-gray-900 sm:pr-12">{findView.Price}</h2>
+              <h2 class="text-2xl font-bold text-gray-900 sm:pr-12">${findView.Price}</h2>
 
               <section aria-labelledby="information-heading" class="mt-2">
                 <h3 id="information-heading" class="sr-only">Product information</h3>
 
-                <p class="text-2xl text-gray-900">$192</p>
+                <p class="text-2xl text-gray-900">OldPrice:${findView.OldPrice}</p>
 
               
                 <div class="mt-6">
@@ -114,74 +114,42 @@ console.log(findView);
 
                   <div class="mt-10">
                     <div class="flex items-center justify-between">
-                      <h4 class="text-sm font-medium text-gray-900">Size</h4>
-                      <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
+                      <h4 class="text-sm font-medium text-gray-900">Product Detials</h4>
+                     
                     </div>
 
                     <fieldset class="mt-4">
-                      <legend class="sr-only">Choose a size</legend>
-                      <div class="grid grid-cols-4 gap-4">
-                       
-                        <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-pointer bg-white text-gray-900 shadow-sm">
-                          <input type="radio" name="size-choice" value="XXS" class="sr-only" aria-labelledby="size-choice-0-label"/>
-                          <span id="size-choice-0-label">XXS</span>
-                          
-                          <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                        </label>
-                       
-                        <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-pointer bg-white text-gray-900 shadow-sm">
-                          <input type="radio" name="size-choice" value="XS" class="sr-only" aria-labelledby="size-choice-1-label"/>
-                          <span id="size-choice-1-label">XS</span>
-                          
-                          <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                        </label>
-                       
-                        <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-pointer bg-white text-gray-900 shadow-sm">
-                          <input type="radio" name="size-choice" value="S" class="sr-only" aria-labelledby="size-choice-2-label"/>
-                          <span id="size-choice-2-label">S</span>
-                          
-                          <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                        </label>
-                        
-                        <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-pointer bg-white text-gray-900 shadow-sm">
-                          <input type="radio" name="size-choice" value="M" class="sr-only" aria-labelledby="size-choice-3-label"/>
-                          <span id="size-choice-3-label">M</span>
-                          
-                          <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                        </label>
-                       
-                        <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-pointer bg-white text-gray-900 shadow-sm">
-                          <input type="radio" name="size-choice" value="L" class="sr-only" aria-labelledby="size-choice-4-label"/>
-                          <span id="size-choice-4-label">L</span>
-                          
-                          <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                        </label>
-                        
-                        <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-pointer bg-white text-gray-900 shadow-sm">
-                          <input type="radio" name="size-choice" value="XL" class="sr-only" aria-labelledby="size-choice-5-label"/>
-                          <span id="size-choice-5-label">XL</span>
-                         
-                          <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                        </label>
-                       
-                        <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-pointer bg-white text-gray-900 shadow-sm">
-                          <input type="radio" name="size-choice" value="XXL" class="sr-only" aria-labelledby="size-choice-6-label"/>
-                          <span id="size-choice-6-label">XXL</span>
-                          
-                          <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                        </label>
-                       
-                        <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-not-allowed bg-gray-50 text-gray-200">
-                          <input type="radio" name="size-choice" value="XXXL" disabled class="sr-only" aria-labelledby="size-choice-7-label"/>
-                          <span id="size-choice-7-label">XXXL</span>
-                          <span aria-hidden="true" class="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200">
-                            <svg class="absolute inset-0 h-full w-full stroke-2 text-gray-200" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
-                              <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
-                            </svg>
-                          </span>
-                        </label>
-                      </div>
-                    </fieldset>
+  <legend class="sr-only">Product Details</legend>
+  <div>
+    <h4 class="text-sm font-medium text-gray-900">Model Name</h4>
+    <p>{findView.ProductName}</p>
+  </div>
+  <div class="mt-1">
+    <h4 class="text-sm font-medium text-gray-900">Processor</h4>
+    <p>{findView.ProcessorName}</p>
+  </div>
+  <div class="mt-1">
+    <h4 class="text-sm font-medium text-gray-900">RAM</h4>
+    <p>{findView.RAM} GB</p>
+  </div>
+  <div class="mt-1">
+    <h4 class="text-sm font-medium text-gray-900">Storage</h4>
+    <p>{findView.SSDCapacity} SSD</p>
+  </div>
+  <div class="mt-1px">
+    <h4 class="text-sm font-medium text-gray-900">Operating System</h4>
+    <p>{findView.OperatingSystem}</p>
+  </div>
+  <div class="mt-1px">
+    <h4 class="text-sm font-medium text-gray-900">Screen Size</h4>
+    <p>{findView.ScreenSize}</p>
+  </div>
+  <div class="mt-1px">
+    <h4 class="text-sm font-medium text-gray-900">Battery Backup</h4>
+    <p>Up to {findView.BatteryBackup} Hours</p>
+  </div>
+</fieldset>
+
                   </div>
 
                   <button type="submit" class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to bag</button>

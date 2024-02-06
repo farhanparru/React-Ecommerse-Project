@@ -4,6 +4,7 @@ const NewCom = () => {
   return (
     <div style={{ position: 'relative', paddingBottom: '56.25%', overflow: 'hidden', maxWidth: '100%' }}>
       <iframe
+      
         title="Embedded YouTube Video"
         src="https://www.youtube.com/embed/XHTrLYShBRQ?autoplay=1&mute=1"
         frameBorder="0"
